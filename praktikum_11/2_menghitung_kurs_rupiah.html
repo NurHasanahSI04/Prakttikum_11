@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konverter Mata Uang</title>
+    <style>
+        .tabel{text-align: center;}
+        #jumlah_Uang{width:300px;}
+        #mata_Uang_Asal{width:300px;}
+        #mata_Uang_Tujuan{width:300px;}
+    </style>
+    <script>
+        function hitung() {
+            
+            let jumlahUang = document.getElementById("jumlah_Uang").value;
+            let mataUangAsal = document.getElementById("mata_Uang_Asal").value;
+            let mataUangTujuan = document.getElementById("mata_Uang_Tujuan").value;
+            let nilaiTukarUSD = 0.000064;
+            let nilaiTukarEUR = 0.000059;
+            let nilaiTukar;
+
+            if (mataUangTujuan === "USD") {
+                nilaiTukar = nilaiTukarUSD;
+            } else if (mataUangTujuan === "EUR") {
+                nilaiTukar = nilaiTukarEUR;
+            } else {
+            alert("Mata uang tujuan tidak valid.");
+            
+            }
+
+            let nilaiSetara = jumlahUang * nilaiTukar;
+            let hasil = document.getElementById("hasil");
+            hasil.innerHTML = "Nilai setara: " + nilaiSetara + " " + mataUangTujuan;
+        }
+    </script>
+</head>
+<body>
+    <h1 align="center">KALKULATOR KURS | Konversi Mata Uang</h1>
+    <hr>
+    
+    <table align="center"  cellpadding="8">
+        <tr>
+        <td><label for="jumlahUang">Jumlah Uang</label></td>
+        <td>:</td>
+        <td><input type="number" id="jumlah_Uang" placeholder="Masukkan jumlah uang"></td>
+        </tr>
+        
+        <tr>
+        <td><label for="mata_Uang_Asal">Mata Uang Asal</label></td>
+        <td>:</td>
+        <td><select id="mata_Uang_Asal">
+            <option value="USD">Rupiah</option></select></td>
+        </tr>
+    
+         <tr>
+        <td><label for="mata_Uang_Tujuan">Mata Uang Tujuan</label></td>
+        <td>:</td>
+        <td><select id="mata_Uang_Tujuan">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option></td>
+        </tr>
+        
+    </select>
+    
+    </table>
+    <br>
+    <div class="tabel">
+    <button onclick="hitung()" align="center" style="background-color: greenyellow;">Hitung Nilai Tukar</button>
+    </div>
+    <br>
+    
+    <div id="hasil" align="center">
+    </div>
+</body>
+</html>

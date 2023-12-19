@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .label{
+            text-align: center;
+        }
+    </style>
+    <script>
+       
+        
+        function luasLingkaran(){
+            let jarijari= document.getElementById("r").value ;
+            let _phi =  3.14;
+            let luas = 3.14*jarijari*jarijari
+          
+            let area_hasil = document.getElementById("hasil");
+            area_hasil.innerHTML = "Luas Lingkaran: " + luas;
+        }
+       
+
+
+        function kelilingLingkaran(){
+            let jarijari= document.getElementById("r").value ;
+            let _phi =  3.14;
+            let keliling = 2*3.14*jarijari
+          
+            let area_hasil = document.getElementById("output");
+            area_hasil.innerHTML = "Keliling Lingkaran: " + keliling;
+        }
+       
+    </script>
+</head>
+<body>
+    <h1 align="center">MARI MENGHITUNG</h1>
+    <br>
+
+    <h2 align="center">Luas Lingkaran</h2>
+    <div class="label">
+    <label for="">Masukan Jari Jari :</label>
+    <input type="number" id="r"><br><br>
+    <button onclick="luasLingkaran()" style="background-color:greenyellow;">Hitung</button>
+    <br>
+    <br>
+    <div id="hasil"></div>
+    </div>
+
+    <br>
+    <br>
+    <h2 align="center">Keliling Lingkaran</h2>
+    <div class="label">
+    <label for="">Masukan Jari Jari :</label>
+    <input type="number" id="r"><br><br>
+    <button onclick="kelilingLingkaran()" style="background-color:greenyellow;">Hitung</button>
+    <br>
+    <br>
+    <div id="output"></div>
+    </div>
+   
+</body>
+</html>
